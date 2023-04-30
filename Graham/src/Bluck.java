@@ -39,7 +39,7 @@ public class Bluck {
             }        
         }
         System.out.println("Waiting for result...");
-        Point[] res = ConvexHull.convexHull(concatenatedArray);
+        Point[] res = ConvexHull.convexHull(concatenatedArray, concatenatedArray.length);
         System.out.println("Result: " + pointsToString(res));
         curtask.end();
     }
