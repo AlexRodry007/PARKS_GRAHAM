@@ -19,7 +19,7 @@ public class ConvexHull
 
 static Point[] convexHull(Point points[], int n)
 {
-    if (n < 3) return;
+    if (n < 3) return points;
 
     Vector<Point> hull = new Vector<Point>();
 
@@ -51,35 +51,4 @@ static Point[] convexHull(Point points[], int n)
 
     return hullArray;
 }
-}
-
-public static void main(String[] args) 
-{
-    Point points[] = new Point[8];
-    points[0] = new Point(0, 3);
-    points[1] = new Point(1, 1);
-    points[2] = new Point(2, 2);
-    points[3] = new Point(4, 4);
-    points[4] = new Point(0, 0);
-    points[5] = new Point(1, 2);
-    points[6] = new Point(3, 1);
-    points[7] = new Point(3, 3);
-
-    int n = points.length;
-    convexHull(points, n);
-}
- 
-public class Point 
-{
-    int x, y;
-    Point()
-    {
-        x = 0;
-        y = 0;
-    }
-    Point(int a, int b)
-    {
-        x = a;
-        y = b;
-    }
 }

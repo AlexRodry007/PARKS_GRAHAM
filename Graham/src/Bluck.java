@@ -9,7 +9,7 @@ public class Bluck {
         task curtask = new task();
         curtask.addJarFile("DFS.jar");
         Point[] n = fromFile(curtask.findFile("input"));
-        Point[][] dividedArray = divideArray(n, 4)
+        Point[][] dividedArray = divideArray(n, 4);
 
         AMInfo info = new AMInfo(curtask, null);
 
@@ -28,11 +28,12 @@ public class Bluck {
         Point[] concatenatedArray = new Point[0];
         for (channel c: chans) {
             try {
-                Point[] points = (Point[]) c.readObject();
-                Point[] tempArray = new Point[concatenatedArray.length + points.length];
+                Point[] subpoints = (Point[]) c.readObject();
+                Point[] tempArray = new Point[concatenatedArray.length + subpoints.length];
                 System.arraycopy(concatenatedArray, 0, tempArray, 0, concatenatedArray.length);
-                System.arraycopy(points, 0, tempArray, concatenatedArray.length, points.length);
+                System.arraycopy(subpoints, 0, tempArray, concatenatedArray.length, subpoints.length);
                 concatenatedArray = tempArray;
+            
             } catch (Exception e) {
                 e.printStackTrace();
             }        
