@@ -45,14 +45,14 @@ public class Bluck {
     }
 
     public static Point[] fromFile(String filename) throws Exception {
-        Scanner scanner = new Scanner(new File(inputFile));
+        Scanner scanner = new Scanner(new File(filename));
             int numPoints = 0;
             while (scanner.hasNextLine()) {
                 numPoints++;
                 scanner.nextLine();
             }
             scanner.close();
-            scanner = new Scanner(inputFile);
+            scanner = new Scanner(new File(filename));
             Point[] points = new Point[numPoints];
             int i = 0;
             while (scanner.hasNextLine()) {
